@@ -6,7 +6,7 @@ server命令：mvn spring-boot:run -Dspring.profiles.active=peer1 （peer1为配
 
 
 ===============
-eureka-client时会报404
+手动刷新eureka-client时会报404
 原因：在eureka-client中未引用以下依赖（教程中并没有这个依赖）
         <dependency>
             <groupId>org.springframework.boot</groupId>
