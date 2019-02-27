@@ -1,0 +1,4 @@
+1.config-server可以右键启动运行，eureka-client/eureka-server需用命令启动，否则调试会出各种错误（坑）
+client命令：mvn spring-boot:run
+server命令：mvn spring-boot:run -Dspring.profiles.active=peer1 （peer1为配置文件后缀名）
+2.修改配置文件并重启config-server后，命令刷新配置：curl -i -X POST localhost:8761/actuator/refresh（在刷新eureka-client时会报404，暂时未解决）
