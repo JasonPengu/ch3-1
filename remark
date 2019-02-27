@@ -2,3 +2,13 @@
 client命令：mvn spring-boot:run
 server命令：mvn spring-boot:run -Dspring.profiles.active=peer1 （peer1为配置文件后缀名）
 2.修改配置文件并重启config-server后，命令刷新配置：curl -i -X POST localhost:8761/actuator/refresh（在刷新eureka-client时会报404，暂时未解决）
+
+
+
+===============
+eureka-client时会报404
+原因：在eureka-client中未引用以下依赖（教程中并没有这个依赖）
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
